@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+ <html>
+	 <head>
+		 <title>Song Search Engin</title>
+		 <link rel="stylesheet" type="text/css" href="style.css">
+		 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+		 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		 <script src="http://code.jquery.com/jquery-2.0.0.js"></script>	
+		 <script type="text/javascript" src="hilitor.js"></script>
+		  <script type="text/javascript" src="dataorg.js"></script>
+
+	 </head>
+	 <body>
+		 	<div id="wrapper">
+		 		<a href="index.html" id="logo"></a>	
+		 	<h2>Search Song</h2>
+			<h3>by keyword</h3>
+			 	<form id="form" class="input-group" method="GET" action="http://localhost/search.php">
+					<input id="input_id" type="text" name="search" class="fields">
+					<span class="input-group-btn">
+					<button name="submit" id="submitBtn" type="submit" class="btn btn-default submit">Search</button>
+					 </span>
+			 	</form>
+			 <div id="res">
+			 <table class="table table-striped">
+				 <thead>
+					 <tr>
+						 <th>Artist Name</th>
+						 <th>Song Name</th>
+						 <th style='width:50%;'>Lyrics</th>
+					 </tr>
+				 </thead>
+				 <tbody>
+					 <tr class="table"> 
+					 	
+					 </tr>
+				 </tbody>
+			 </table>
+			</div>
+					 	
+	
+		
+		<br><br><br><br>
+		
+		<h2>Add Song</h2>
+			 <h3>Please add one song each time</h3>	 
+			 	<form id="form2" class="input-group" method="POST" action="http://localhost/add.php">
+					 <input placeholder="Artist Name" type="text" name="artist" class="fields"><br>
+					 <input placeholder="Song Name" type="text" name="songName" class="fields"><br>
+					 <textarea placeholder="Lyrics" type="text" name="lyrics" class="fields" ></textarea><br>
+						 <span class="input-group-btn"><br>
+						 <button type="submit" class="submit" OnClick="loading()">Add</button>
+						 <p id = "load"></p>
+						 <script>
+						 	function loading() {
+    						document.getElementById("load").innerHTML = "Loading your song, please wait...";
+						}
+						 </script>
+						 </span>
+			 	</form>
+<br><br><br><br>
+			<h2>Delete Field</h2>
+			 <h3>Please type the name of the song you want to delete</h3>
+			 	<form id="form3" class="input-group" method="POST" action="http://localhost/delete.php">
+					 <input placeholder="Song Name" type="text" name="songName" class="fields">
+			
+						 <span class="input-group-btn">
+						 <button type="submit" class="submit" OnClick="loading2()">Delete</button>
+						  <p id = "del"></p>
+						 <script>
+						 	function loading2() {
+    						document.getElementById("del").innerHTML = "Deleting your song, please wait...";
+						}
+						 </script>
+						 </span>
+			 	</form>
+		</div>    
+	 </body>
+</html>
